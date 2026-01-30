@@ -1,50 +1,27 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import Menu from './components/Menu.vue'
+import Menu from '@/components/Menu.vue'
 import { ref } from 'vue'
 
 const items = ref([
   {
-    label: 'Home',
+    label: 'Settings',
     icon: 'pi pi-home',
-    route: '/',
   },
   {
-    label: 'Buttons',
-    icon: 'pi pi-info-circle',
-    route: '/buttons',
+    label: 'Messages',
+    icon: 'pi pi-home',
   },
   {
-    label: 'Inputs',
-    icon: 'pi pi-info-circle',
-    route: '/inputs',
-  },
-  {
-    label: 'Dialog',
-    icon: 'pi pi-info-circle',
-    route: '/dialog',
-  },
-  {
-    label: 'Card',
-    icon: 'pi pi-info-circle',
-    route: '/card',
-  },
-  {
-    label: 'Menu',
-    icon: 'pi pi-info-circle',
-    route: '/menu',
-  },
-  {
-    label: 'Alert',
-    icon: 'pi pi-info-circle',
-    route: '/alert',
+    label: 'Logout',
+    icon: 'pi pi-home',
   },
 ])
 </script>
 
 <template>
-  <aside class="w-[250px] h-full">
-    <Menu :items>
+  <h1>Menu</h1>
+  <div class="border border-black md:w-80">
+    <Menu :items="items">
       <template #item="{ item, props }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
           <a v-ripple :href="href" v-bind="props.action" @click="navigate">
@@ -58,8 +35,5 @@ const items = ref([
         </a>
       </template>
     </Menu>
-  </aside>
-  <main class="flex-1">
-    <RouterView />
-  </main>
+  </div>
 </template>

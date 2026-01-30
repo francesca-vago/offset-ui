@@ -32,6 +32,16 @@ const router = createRouter({
       name: 'card',
       component: () => import('../views/CardView.vue'),
     },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: () => import('../views/MenuView.vue'),
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: () => import('../views/AlertView.vue'),
+    },
   ],
 })
 
