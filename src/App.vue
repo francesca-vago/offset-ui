@@ -5,14 +5,24 @@ import { ref } from 'vue'
 
 const items = ref([
   {
-    label: 'Home',
+    label: 'Overview',
     icon: 'pi pi-home',
     route: '/',
+  },
+  {
+    label: 'Alert',
+    icon: 'pi pi-info-circle',
+    route: '/alert',
   },
   {
     label: 'Buttons',
     icon: 'pi pi-info-circle',
     route: '/buttons',
+  },
+  {
+    label: 'Card',
+    icon: 'pi pi-info-circle',
+    route: '/card',
   },
   {
     label: 'Inputs',
@@ -24,26 +34,17 @@ const items = ref([
     icon: 'pi pi-info-circle',
     route: '/dialog',
   },
-  {
-    label: 'Card',
-    icon: 'pi pi-info-circle',
-    route: '/card',
-  },
+
   {
     label: 'Menu',
     icon: 'pi pi-info-circle',
     route: '/menu',
   },
-  {
-    label: 'Alert',
-    icon: 'pi pi-info-circle',
-    route: '/alert',
-  },
 ])
 </script>
 
 <template>
-  <aside class="w-[250px] h-full">
+  <aside class="w-[250px] h-full p-4">
     <Menu :items>
       <template #item="{ item, props }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>

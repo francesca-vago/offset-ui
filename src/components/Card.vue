@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Card from 'primevue/card'
+import Button from '@/components/Button.vue'
 
 defineProps<{
   header: string
@@ -8,32 +9,33 @@ defineProps<{
 </script>
 
 <template>
-  <Card unstyled class="bg-white shadow-[4px_4px_0_0_#000000] border-black rounded-lg border">
+  <Card
+    unstyled
+    class="bg-white shadow-[4px_4px_0_0_#000000] border-black rounded-lg border overflow-hidden h-fit"
+  >
     <template #header>
-      <div class="w-full h-full">
-        <img class="object-cover" src="../images/lemon-illustration.jpg" alt="Image Description" />
+      <div>
+        <img class="w-full h-auto" src="../images/lemon-illustration.jpg" alt="Image Description" />
       </div>
     </template>
     <template #title>
-      <h3 class="p-5 text-3xl mb-2 font-bold">{{ header }}</h3>
+      <h5 class="px-5 pt-5">{{ header }}</h5>
     </template>
     <template #subtitle>
-      <span v-if="subtitle" class="p-5 text-sm text-neutral-500 font-medium">{{ subtitle }}</span>
+      <span v-if="subtitle" class="px-5 text-neutral-500 font-medium">{{ subtitle }}</span>
     </template>
     <template #content>
-      <p class="p-5 mt-1">
+      <p class="px-5 mt-1">
         Neobrutalism is an aesthetic characterized by high contrast elements, bright colors, and
         bold shapes. It is often used to make a statement, as it is meant to be eye-catching and
-        stand out to the viewer. It is also used in user interface and web design, with features
-        such as vibrant colors and bold shapes. Neobrutalism can also be used in print design, with
-        an example being a bold shape with a vibrant color fill applied to it.
+        stand out to the viewer.
       </p>
     </template>
     <template #footer>
-      <!-- <div class="">
-        <Button label="Cancel" />
-        <Button label="Save" />
-      </div> -->
+      <div class="flex justify-end gap-2 px-5 py-5">
+        <Button label="Cancel" size="sm" variant="outline" />
+        <Button label="Save" size="sm" variant="full" />
+      </div>
     </template>
   </Card>
 </template>

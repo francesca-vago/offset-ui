@@ -59,10 +59,10 @@ const type: Record<Variant, { icon: string; label: string }> = {
 <template>
   <div :class="['base', variant]">
     <div class="flex gap-1 items-center">
-      <span :class="type[variant].icon" class="pi me-3"></span>
-      <p class="text-sm">
+      <span :class="type[variant].icon" class="pi me-2"></span>
+      <span class="text-sm mb-0">
         <strong>{{ type[variant].label }}:</strong> {{ message }}
-      </p>
+      </span>
     </div>
     <button data-close="#alert-closer" class="cursor-pointer">
       <i class="pi pi-times text-sm"></i>
