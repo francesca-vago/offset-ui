@@ -8,7 +8,7 @@ defineProps<{
 main {
   padding: 4rem;
   background-color: var(--color-offset-blue);
-  border-left: 1px solid black;
+  border-left: 2px solid black;
   flex-grow: 1;
 }
 </style>

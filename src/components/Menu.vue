@@ -11,7 +11,6 @@ defineProps<{
   <Menu
     :model="items"
     :pt="{
-      item: 'hover:border-2 hover:border-black cursor-pointer mb-2 focus:border-2 focus:border-black',
       content: 'border border-black w-auto',
     }"
   >

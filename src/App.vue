@@ -39,7 +39,7 @@ const items = ref([
 <template>
   <Navbar />
   <div class="flex">
-    <aside class="w-[250px] h-full">
+    <aside class="h-full min-w-[250px]">
       <Menu :items>
         <template #item="{ item, props }">
           <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
@@ -48,7 +48,7 @@ const items = ref([
               :href="href"
               v-bind="props.action"
               @click="navigate"
-              class="block w-full hover:bg-[var(--color-neutral-100)]"
+              class="block w-auto text-lg font-semibold hover:bg-[var(--color-offset-pink)] hover:border-2 hover:border-black m-2"
             >
               <span v-if="item.icon" :class="item.icon" />
               <span class="ml-2">{{ item.label }}</span>
@@ -60,7 +60,7 @@ const items = ref([
             :href="item.url"
             :target="item.target"
             v-bind="props.action"
-            class="block w-full hover:bg-[var(--color-neutral-100)]"
+            class="block w-full"
           >
             <span v-if="item.icon" :class="item.icon" />
             <span class="ml-2">{{ item.label }}</span>

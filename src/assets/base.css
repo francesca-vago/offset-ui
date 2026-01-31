@@ -12,7 +12,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--color-neutral-200);
+  --color-background: var(--color-neutral-100);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -45,6 +45,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-danger: var(--danger);
   --color-offset-blue: #b8e2f2;
+  --color-offset-pink: #f4bfd3;
 }
 
 :root {

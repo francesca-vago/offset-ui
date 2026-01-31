@@ -4,16 +4,9 @@ import { ref } from 'vue'
 
 const items = ref([
   {
-    label: 'Home',
-    icon: 'pi pi-home',
-  },
-  {
-    label: 'Features',
+    label: 'Github',
     icon: 'pi pi-star',
-  },
-  {
-    label: 'Projects',
-    icon: 'pi pi-search',
+    url: 'https://github.com/francesca-vago',
   },
   {
     label: 'Contact',
@@ -24,7 +17,7 @@ const items = ref([
 
 <style scoped>
 .card {
-  border: 1px solid black;
+  border-bottom: 2px solid black;
   padding: 0.75rem 1rem;
 }
 </style>
@@ -44,6 +37,23 @@ const items = ref([
         <div class="w-[calc(250px_-_4rem)]">
           <img src="../images/logo-color-horizontal.png" alt="Logo" class="w-fit" />
         </div>
+      </template>
+      <template #item="{ item, props, hasSubmenu, root }">
+        <a
+          v-ripple
+          class="flex items-center hover:underline hover:underline-offset-4 decoration-wavy decoration-2 font-bold"
+          v-bind="props.action"
+          :href="item.url"
+        >
+          <span>{{ item.label }}</span>
+          <i
+            v-if="hasSubmenu"
+            :class="[
+              'pi pi-angle-down ml-auto',
+              { 'pi-angle-down': root, 'pi-angle-right': !root },
+            ]"
+          ></i>
+        </a>
       </template>
     </Menubar>
   </div>
