@@ -8,8 +8,8 @@ defineProps<{
 main {
   padding: 4rem;
   background-color: var(--color-blue-200);
-  height: 100vh;
   border-left: 1px solid black;
+  flex-grow: 1;
 }
 </style>
 

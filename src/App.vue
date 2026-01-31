@@ -67,9 +67,9 @@ const items = ref([
         </template>
       </Menu>
     </aside>
-    <main class="flex-1">
+    <div class="flex-1 h-dvh flex flex-col">
       <Navbar />
       <RouterView />
-    </main>
+    </div>
   </div>
 </template>

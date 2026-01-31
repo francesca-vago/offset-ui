@@ -5,36 +5,40 @@ import Button from '@/components/Button.vue'
 defineProps<{
   header: string
   subtitle?: string
+  content?: string
+  image?: string
 }>()
 </script>
 
 <template>
   <Card
     unstyled
-    class="bg-white shadow-[4px_4px_0_0_#000000] border-black rounded-lg border overflow-hidden h-fit"
+    class="bg-white shadow-[4px_4px_0_0_#000000] border-black rounded-sm border-2 overflow-hidden w-full max-w-2xl h-fit"
   >
     <template #header>
-      <div>
-        <img class="w-full h-auto" src="../images/lemon-illustration.jpg" alt="Image Description" />
+      <div class="w-full h-full">
+        <img v-if="image" class="w-full h-full object-cover" :src="image" alt="Image Description" />
       </div>
     </template>
     <template #title>
-      <h5 class="px-5 pt-5">{{ header }}</h5>
+      <h4 class="px-5 pt-5">{{ header }}</h4>
     </template>
     <template #subtitle>
       <span v-if="subtitle" class="px-5 text-neutral-500 font-medium">{{ subtitle }}</span>
     </template>
     <template #content>
-      <p class="px-5 mt-1">
-        Neobrutalism is an aesthetic characterized by high contrast elements, bright colors, and
-        bold shapes. It is often used to make a statement, as it is meant to be eye-catching and
-        stand out to the viewer.
+      <p v-if="content" class="px-5 mt-1 !text-xs text-justify text-wrap">
+        {{ content }}
       </p>
     </template>
     <template #footer>
       <div class="flex justify-end gap-2 px-5 py-5">
-        <Button label="Cancel" size="sm" variant="outline" />
-        <Button label="Save" size="sm" variant="full" />
+        <Button
+          label="Read More"
+          size="sm"
+          variant="text"
+          class="hover:underline hover:underline-offset-2 hover:decoration-wavy hover:decoration-2"
+        />
       </div>
     </template>
   </Card>
