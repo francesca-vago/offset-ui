@@ -7,7 +7,7 @@ defineProps<{
 <style scoped>
 main {
   padding: 4rem;
-  background-color: var(--color-blue-200);
+  background-color: var(--color-offset-blue);
   border-left: 1px solid black;
   flex-grow: 1;
 }

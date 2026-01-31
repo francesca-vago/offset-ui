@@ -44,6 +44,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-danger: var(--danger);
+  --color-offset-blue: #b8e2f2;
 }
 
 :root {

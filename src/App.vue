@@ -37,8 +37,9 @@ const items = ref([
 </script>
 
 <template>
+  <Navbar />
   <div class="flex">
-    <aside class="w-[250px] h-full p-4">
+    <aside class="w-[250px] h-full">
       <Menu :items>
         <template #item="{ item, props }">
           <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
@@ -68,7 +69,6 @@ const items = ref([
       </Menu>
     </aside>
     <div class="flex-1 h-dvh flex flex-col">
-      <Navbar />
       <RouterView />
     </div>
   </div>

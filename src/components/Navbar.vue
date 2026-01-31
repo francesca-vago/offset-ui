@@ -34,10 +34,17 @@ const items = ref([
     <Menubar
       :model="items"
       :pt="{
+        root: { class: 'flex justify-between' },
         rootList: { class: 'flex gap-1 items-center justify-end' },
         button: { class: 'hidden' },
         itemLink: { class: 'flex gap-2 items-center px-3 py-2 cursor-pointer' },
       }"
-    />
+    >
+      <template #start>
+        <div class="w-[calc(250px_-_4rem)]">
+          <img src="../images/logo-color-horizontal.png" alt="Logo" class="w-fit" />
+        </div>
+      </template>
+    </Menubar>
   </div>
 </template>
