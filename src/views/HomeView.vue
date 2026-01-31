@@ -1,24 +1,11 @@
-<script setup lang="ts"></script>
-
-<style scoped>
-section {
-  border: 1px solid black;
-  padding: 1rem;
-  background-color: var(--color-neutral-100);
-  border-radius: var(--radius-sm);
-  margin-bottom: 2rem;
-}
-
-.section-title {
-  margin-bottom: 2rem;
-}
-</style>
+<script setup lang="ts">
+import SectionLayout from '../layouts/SectionLayout.vue'
+</script>
 
 <template>
   <h1>Overview</h1>
 
-  <section>
-    <h2 class="section-title">Typography</h2>
+  <SectionLayout title="Typography">
     <h1>This is Heading 1</h1>
     <h2>This is Heading 2</h2>
     <h3>This is Heading 3</h3>
@@ -27,10 +14,9 @@ section {
     <h6>This is Heading 6</h6>
     <p>This is a paragraph</p>
     <span>This is a span</span>
-  </section>
+  </SectionLayout>
 
-  <section>
-    <h2 class="section-title">Colors</h2>
+  <SectionLayout title="Colors">
     <div class="flex gap-3 mb-3">
       <div class="bg-red-200 w-10 h-10"></div>
       <div class="bg-green-200 w-10 h-10"></div>
@@ -44,10 +30,9 @@ section {
       <div class="bg-stone-200 w-10 h-10"></div>
       <div class="bg-gray-500 w-10 h-10"></div>
     </div>
-  </section>
+  </SectionLayout>
 
-  <section>
-    <h2 class="section-title">Spacing</h2>
+  <SectionLayout title="Spacing">
     <div class="w-10 h-10"></div>
-  </section>
+  </SectionLayout>
 </template>

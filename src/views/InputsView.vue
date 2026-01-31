@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import Input from '@/components/Input.vue'
 import TextArea from '@/components/TextArea.vue'
+import SectionLayout from '@/layouts/SectionLayout.vue'
 </script>
 
 <template>
-  <section class="bg-neutral-100 border border-black p-4 rounded-sm">
-    <h1>Inputs</h1>
-    <Input placeholder="Enter your name" class="mb-4" />
-    <TextArea placeholder="Enter your message" class="mb-4" />
-  </section>
+  <h1>Inputs</h1>
+  <SectionLayout title="Input Text">
+    <Input placeholder="Enter your name" />
+  </SectionLayout>
+  <SectionLayout title="Textarea">
+    <TextArea placeholder="Enter your message" />
+  </SectionLayout>
 </template>
