@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Menu from './components/Menu.vue'
+import Navbar from './components/Navbar.vue'
 import { ref } from 'vue'
 
 const items = ref([
@@ -36,36 +37,39 @@ const items = ref([
 </script>
 
 <template>
-  <aside class="w-[250px] h-full p-4">
-    <Menu :items>
-      <template #item="{ item, props }">
-        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+  <div class="flex">
+    <aside class="w-[250px] h-full p-4">
+      <Menu :items>
+        <template #item="{ item, props }">
+          <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+            <a
+              v-ripple
+              :href="href"
+              v-bind="props.action"
+              @click="navigate"
+              class="block w-full hover:bg-[var(--color-neutral-100)]"
+            >
+              <span v-if="item.icon" :class="item.icon" />
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </router-link>
           <a
+            v-else
             v-ripple
-            :href="href"
+            :href="item.url"
+            :target="item.target"
             v-bind="props.action"
-            @click="navigate"
             class="block w-full hover:bg-[var(--color-neutral-100)]"
           >
             <span v-if="item.icon" :class="item.icon" />
             <span class="ml-2">{{ item.label }}</span>
           </a>
-        </router-link>
-        <a
-          v-else
-          v-ripple
-          :href="item.url"
-          :target="item.target"
-          v-bind="props.action"
-          class="block w-full hover:bg-[var(--color-neutral-100)]"
-        >
-          <span v-if="item.icon" :class="item.icon" />
-          <span class="ml-2">{{ item.label }}</span>
-        </a>
-      </template>
-    </Menu>
-  </aside>
-  <main class="flex-1">
-    <RouterView />
-  </main>
+        </template>
+      </Menu>
+    </aside>
+    <main class="flex-1">
+      <Navbar />
+      <RouterView />
+    </main>
+  </div>
 </template>
