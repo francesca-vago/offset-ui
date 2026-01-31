@@ -33,7 +33,7 @@ const type: Record<Variant, { icon: string; label: string }> = {
 
 <style scoped>
 .base {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 4px;
   color: black;
   padding: 0.5rem 1rem;

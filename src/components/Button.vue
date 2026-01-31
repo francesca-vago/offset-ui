@@ -36,6 +36,13 @@ defineEmits<{
   background-color: transparent;
   border: none;
   box-shadow: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+  }
 }
 
 .sm {
@@ -72,8 +79,9 @@ defineEmits<{
     @click="$emit('click', $event)"
     :icon="icon"
     :disabled="disabled"
-    pt:root="h-fit space-x-2 border-black border-1 hover:bg-[#79F7FF] shadow-[4px_4px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] active:shadow-none cursor-pointer rounded-sm"
+    pt:root="h-fit space-x-2 border-black border-2 hover:bg-[#79F7FF] shadow-[4px_4px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] active:shadow-none cursor-pointer rounded-sm"
     pt:label="font-bold"
+    pt:icon="!font-bold"
     :class="[variant, size, disabled ? 'disabled' : '', icon && !label ? 'icon-only' : '']"
   />
 </template>

@@ -33,12 +33,7 @@ defineProps<{
     </template>
     <template #footer>
       <div class="flex justify-end gap-2 px-5 py-5">
-        <Button
-          label="Read More"
-          size="sm"
-          variant="text"
-          class="hover:underline hover:underline-offset-2 hover:decoration-wavy hover:decoration-2"
-        />
+        <Button label="Read More" size="sm" variant="text" />
       </div>
     </template>
   </Card>
