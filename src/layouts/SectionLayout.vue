@@ -8,8 +8,8 @@ defineProps<{
 section {
   margin-bottom: 2rem;
   margin-top: 2rem;
-  border: 1px solid black;
-  padding: 2cqmin;
+  border: 2px solid black;
+  padding: 2rem;
   background-color: var(--color-neutral-100);
   border-radius: var(--radius-sm);
 }

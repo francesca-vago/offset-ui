@@ -26,7 +26,6 @@ const items = ref([
 .card {
   border: 1px solid black;
   padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
 }
 </style>
 
