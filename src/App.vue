@@ -42,13 +42,21 @@ const items = ref([
     <aside class="h-full min-w-[250px]">
       <Menu :items>
         <template #item="{ item, props }">
-          <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+          <router-link
+            v-if="item.route"
+            v-slot="{ href, navigate, isActive }"
+            :to="item.route"
+            custom
+          >
             <a
               v-ripple
               :href="href"
               v-bind="props.action"
               @click="navigate"
-              class="block w-auto text-lg font-semibold hover:bg-[var(--color-offset-pink)] hover:border-2 hover:border-black m-2"
+              class="block w-auto text-lg font-semibold hover:bg-[var(--color-offset-purple)] border-2 hover:border-black m-2"
+              :class="[
+                isActive ? 'border-black bg-[var(--color-offset-purple)]' : 'border-transparent',
+              ]"
             >
               <span v-if="item.icon" :class="item.icon" />
               <span class="ml-2">{{ item.label }}</span>

@@ -46,6 +46,13 @@
   --color-danger: var(--danger);
   --color-offset-blue: #b8e2f2;
   --color-offset-pink: #f4bfd3;
+  --color-offset-purple: #e3bff4;
+  --color-offset-green: #ace8ca;
+  --color-offset-yellow: #f7eead;
+  --color-offset-red: #f28183;
+  --color-text: var(--color-neutral-950);
+  --color-background: var(--color-neutral-100);
+  --color-disabled: var(--color-neutral-200);
 }
 
 :root {

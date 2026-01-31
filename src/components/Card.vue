@@ -3,17 +3,18 @@ import Card from 'primevue/card'
 import Button from '@/components/Button.vue'
 
 defineProps<{
-  header: string
+  title: string
   subtitle?: string
   content?: string
   image?: string
+  noFooter?: boolean
 }>()
 </script>
 
 <template>
   <Card
     unstyled
-    class="bg-white shadow-[4px_4px_0_0_#000000] border-black rounded-sm border-2 overflow-hidden w-full max-w-2xl h-fit"
+    class="shadow-[4px_4px_0_0_#000000] border-black rounded-sm border-2 overflow-hidden w-full max-w-2xl h-fit"
   >
     <template #header>
       <div class="w-full h-full">
@@ -21,7 +22,7 @@ defineProps<{
       </div>
     </template>
     <template #title>
-      <h4 class="px-5 pt-5">{{ header }}</h4>
+      <h4 class="px-5 pt-5">{{ title }}</h4>
     </template>
     <template #subtitle>
       <span v-if="subtitle" class="px-5 text-neutral-500 font-medium">{{ subtitle }}</span>
@@ -32,7 +33,7 @@ defineProps<{
       </p>
     </template>
     <template #footer>
-      <div class="flex justify-end gap-2 px-5 py-5">
+      <div v-if="!noFooter" class="flex justify-end gap-2 px-5 py-5">
         <Button label="Read More" size="sm" variant="text" />
       </div>
     </template>
