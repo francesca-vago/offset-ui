@@ -6,38 +6,30 @@ import { ref } from 'vue'
 const items = ref([
   {
     label: 'Overview',
-    icon: 'pi pi-home',
     route: '/',
   },
   {
     label: 'Alert',
-    icon: 'pi pi-info-circle',
     route: '/alert',
   },
   {
     label: 'Buttons',
-    icon: 'pi pi-info-circle',
     route: '/buttons',
   },
   {
     label: 'Card',
-    icon: 'pi pi-info-circle',
     route: '/card',
   },
   {
+    label: 'Dialog',
+    route: '/dialog',
+  },
+  {
     label: 'Inputs',
-    icon: 'pi pi-info-circle',
     route: '/inputs',
   },
   {
-    label: 'Dialog',
-    icon: 'pi pi-info-circle',
-    route: '/dialog',
-  },
-
-  {
     label: 'Menu',
-    icon: 'pi pi-info-circle',
     route: '/menu',
   },
 ])
@@ -48,13 +40,26 @@ const items = ref([
     <Menu :items>
       <template #item="{ item, props }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-          <a v-ripple :href="href" v-bind="props.action" @click="navigate">
-            <span :class="item.icon" />
+          <a
+            v-ripple
+            :href="href"
+            v-bind="props.action"
+            @click="navigate"
+            class="block w-full hover:bg-[var(--color-neutral-100)]"
+          >
+            <span v-if="item.icon" :class="item.icon" />
             <span class="ml-2">{{ item.label }}</span>
           </a>
         </router-link>
-        <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-          <span :class="item.icon" />
+        <a
+          v-else
+          v-ripple
+          :href="item.url"
+          :target="item.target"
+          v-bind="props.action"
+          class="block w-full hover:bg-[var(--color-neutral-100)]"
+        >
+          <span v-if="item.icon" :class="item.icon" />
           <span class="ml-2">{{ item.label }}</span>
         </a>
       </template>

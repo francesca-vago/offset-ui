@@ -19,6 +19,7 @@ const visible = ref(false)
     :pt="{
       header: 'w-full flex justify-between',
       title: 'text-3xl mb-2 font-bold',
+      headerActions: 'cursor-pointer',
     }"
   >
     <template #header>
@@ -35,7 +36,7 @@ const visible = ref(false)
     </div>
     <template #footer>
       <div class="flex justify-end gap-4">
-        <Button label="Cancel" @click="visible = false" />
+        <Button label="Cancel" @click="visible = false" variant="outline" />
         <Button label="Save" @click="visible = false" />
       </div>
     </template>
