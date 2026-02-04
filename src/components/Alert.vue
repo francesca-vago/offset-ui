@@ -43,16 +43,20 @@ const type: Record<Variant, { icon: string; label: string }> = {
   background-color: white;
 }
 
+.info {
+  background-color: var(--color-background);
+}
+
 .error {
-  background-color: var(--danger);
+  background-color: var(--color-offset-red);
 }
 
 .success {
-  background-color: var(--success);
+  background-color: var(--color-offset-green);
 }
 
 .warning {
-  background-color: var(--warning);
+  background-color: var(--color-offset-yellow);
 }
 </style>
 
