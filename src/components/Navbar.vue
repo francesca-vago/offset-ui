@@ -4,13 +4,19 @@ import { ref } from 'vue'
 
 const items = ref([
   {
-    label: 'Github',
+    label: 'Playground',
     icon: 'pi pi-star',
     url: 'https://github.com/francesca-vago',
   },
   {
-    label: 'Contact',
+    label: 'Examples',
     icon: 'pi pi-envelope',
+    url: 'https://github.com/francesca-vago',
+  },
+  {
+    label: 'Github',
+    icon: 'pi pi-star',
+    url: 'https://github.com/francesca-vago',
   },
 ])
 </script>
@@ -34,7 +40,7 @@ const items = ref([
       }"
     >
       <template #start>
-        <div class="w-[calc(250px_-_4rem)]">
+        <div class="w-46.5">
           <img src="../images/logo-color-horizontal.png" alt="Logo" class="w-fit" />
         </div>
       </template>

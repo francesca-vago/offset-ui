@@ -33,13 +33,17 @@ const items = ref([
     label: 'Menu',
     route: '/menu',
   },
+  {
+    label: 'Login',
+    route: '/login',
+  },
 ])
 </script>
 
 <template>
   <Navbar />
   <div class="flex">
-    <aside class="h-full min-w-[250px]">
+    <aside class="h-full min-w-64">
       <Menu :items>
         <template #item="{ item, props }">
           <router-link
@@ -53,10 +57,8 @@ const items = ref([
               :href="href"
               v-bind="props.action"
               @click="navigate"
-              class="block w-auto text-lg font-semibold hover:bg-[var(--color-offset-purple)] border-2 hover:border-black m-2"
-              :class="[
-                isActive ? 'border-black bg-[var(--color-offset-purple)]' : 'border-transparent',
-              ]"
+              class="block w-auto text-lg font-semibold hover:bg-(--color-offset-purple) border-2 hover:border-black m-2"
+              :class="[isActive ? 'border-black bg-(--color-offset-purple)' : 'border-transparent']"
             >
               <span v-if="item.icon" :class="item.icon" />
               <span class="ml-2">{{ item.label }}</span>

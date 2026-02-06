@@ -54,12 +54,7 @@ import Card from '../components/Card.vue'
 
     <SectionLayout title="Colors">
       <div class="flex gap-3 mb-3">
-        <Card
-          title="Primary Blue"
-          subtitle="#b8e2f2"
-          class="bg-[var(--color-offset-blue)] pb-2"
-          noFooter
-        />
+        <Card title="Primary Blue" subtitle="#b8e2f2" class="bg-[var(--color-offset-blue)] pb-2" />
         <Card
           title="Primary Pink"
           subtitle="#f4bfd3"
